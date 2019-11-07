@@ -1,7 +1,7 @@
 #include "libmx.h"
-void *mx_realloc(void *ptr, size_t size)
-{
-  if (size == 0 && ptr) {
+void *mx_realloc(void *ptr, size_t size) {
+
+    if (size == 0 && ptr) {
         free(ptr);
         return NULL;
     }

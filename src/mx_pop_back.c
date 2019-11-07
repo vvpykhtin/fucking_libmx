@@ -1,20 +1,20 @@
 #include "libmx.h"
 
-void mx_pop_back(t_list **head)
-{
-  t_list *pFwd = NULL;  //текущий узел
-  t_list *pBwd = NULL;  //предыдущий узел
-  pFwd = *head; 
-  while (pFwd->next) { 
-    pBwd = pFwd;
-    pFwd = pFwd->next;
-  }
- 
-  if (pBwd == NULL) {
+void mx_pop_back(t_list **head) {
+  if (!head || !(*head)) return;
+  
+  if ((*head)->next == NULL) { // if first is NULL-node
+    (*head)->data = NULL;
     free(*head);
     *head = NULL;
-  } else {
-    free(pFwd->next);
-    pBwd->next = NULL;
+    return;
+  }
+  else {
+    t_list *p = *head; // remember beginning
+    while (p->next->next != NULL) // find last
+      p = p->next;
+    p->next->data = NULL;
+    free(p->next);
+    p->next = NULL;
   }
 }

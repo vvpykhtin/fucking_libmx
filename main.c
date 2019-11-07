@@ -108,5 +108,6 @@ int main()
       //        printf("%s\n", arr[i]);
   //char ** ar = mx_strsplit("sadfhjhgj", ' ');
   //printf("%s", mx_replace_substr("McDonaldsa", "alds", "uts"));
-  printf("%d", mx_count_substr("ssssssssss", "ss"));
+  
+  mx_printstr("Misha hui sosi\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 }

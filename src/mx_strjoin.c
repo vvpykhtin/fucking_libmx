@@ -16,5 +16,6 @@ char *mx_strjoin(const char *s1, const char *s2)
     {
       result[i] = s2[j]; j++;
     }
+    result[s1l+s2l] = '\0';
   return result; 
 }
